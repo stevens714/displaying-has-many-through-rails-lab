@@ -1,0 +1,8 @@
+<h1>Appointments</h1>
+
+
+Time:  <%= @appointment.appointment_datetime.to_formatted_s(:long).split.insert(3, "at").join(" ") %><br><br>
+Patient:  <%= link_to @appointment.patient.name, patient_path(@appointment.patient) %><br><br>
+Doctor:  <%= link_to @appointment.doctor.name, doctor_path(@appointment.doctor) %>
+
+

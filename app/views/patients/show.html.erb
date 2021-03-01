@@ -1,0 +1,12 @@
+<h2><%= @patient.name %></h2>
+<br>
+<p>
+    Age: <%= @patient.age %>
+</p>
+Appointments: <br><br>
+    <% @patient.appointments.each do |a| %>
+        <%= a.appointment_datetime.to_formatted_s(:long).split.insert(3, "at").join(" ") %><%= " with"%>
+
+        <%= link_to a.doctor.name, doctor_path(a.doctor)%><br><br>
+<% end %>
+
